@@ -19,7 +19,6 @@ const sampleBook = {
     quantity: 12
 };
 
-// User-defined helper used by every database operation below.
 async function runQuery(connection, sql, values = []) {
     const [result] = await connection.execute(sql, values);
     return result;
@@ -58,11 +57,7 @@ async function insertRecord(connection, book) {
 }
 
 async function updateRecord(connection, id, quantity) {
-    const result = await runQuery(
-        connection,
-        'UPDATE library_books SET quantity = ? WHERE id = ?',
-        [quantity, id]
-    );
+    const result = await runQuery(connection, 'UPDATE library_books SET quantity = ? WHERE id = ?', [quantity, id]);
     console.log(`4. Updated record ${id}; rows changed: ${result.affectedRows}`);
 }
 
@@ -78,10 +73,7 @@ async function selectRecord(connection, id) {
 }
 
 async function selectUniqueAuthors(connection) {
-    const rows = await runQuery(
-        connection,
-        'SELECT DISTINCT author FROM library_books ORDER BY author'
-    );
+    const rows = await runQuery(connection, 'SELECT DISTINCT author FROM library_books ORDER BY author');
     console.log('7. Unique authors:', rows);
     return rows;
 }
@@ -122,7 +114,7 @@ async function main() {
 
 main().catch(error => {
     const detail = error.code ? `${error.code}: ${error.message || 'connection failed'}` : error.message;
-    console.error('MySQL demonstration failed:', detail || error);
+    console.error('MySQL practical failed:', detail || error);
     process.exitCode = 1;
 });
 

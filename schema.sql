@@ -1,0 +1,29 @@
+CREATE DATABASE IF NOT EXISTS csa_library;
+USE csa_library;
+
+CREATE TABLE IF NOT EXISTS library_books (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(150) NOT NULL,
+    author VARCHAR(120) NOT NULL,
+    publisher VARCHAR(120) NOT NULL,
+    published_year SMALLINT NOT NULL,
+    isbn VARCHAR(30) NOT NULL UNIQUE,
+    quantity INT NOT NULL DEFAULT 1,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS admissions (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    roll_number VARCHAR(50) NOT NULL,
+    first_name VARCHAR(100) NOT NULL,
+    full_name VARCHAR(150) NOT NULL,
+    date_of_birth DATE NOT NULL,
+    email VARCHAR(160) NOT NULL,
+    phone VARCHAR(20) NOT NULL,
+    sport VARCHAR(50) NOT NULL,
+    batch VARCHAR(50) NOT NULL,
+    guardian_name VARCHAR(150),
+    city VARCHAR(120),
+    address TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

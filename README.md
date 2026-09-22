@@ -45,8 +45,10 @@ Expected result:
 
 - `server.js`: Express server and admission API
 - `db.js`: MySQL pool, database initialization, and admission insert
+- `mysql-practical.js`: all required MySQL practical operations
+- `MYSQL_VIVA_GUIDE.md`: presentation, checking, and viva questions
+- `schema.sql`: database and table definitions
 - `admissions.html`: Admission form
 - `js/main.js`: Browser validation and API submission
-- `mysql-demo/`: Separate MySQL practical demonstration and viva guide
 
-The library book form remains a browser `localStorage` practical. The admission form is connected to MySQL.
+The admission form is connected to MySQL. The library book form remains a browser `localStorage` practical for the frontend lab exercise.
