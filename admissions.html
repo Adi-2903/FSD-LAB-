@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- ====================================================================
+         PRACTICAL 3 - REQUIREMENT I: Viewport Meta Tag
+         ==================================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Online Student Admission Portal for Champion Sports Academy, Vadodara. Enrol for Cricket, Football, Tennis, Swimming & Athletics.">
+    <title>Online Admission Portal — Champion Sports Academy</title>
+    <!-- Bootstrap 5 online implementation through CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap 5 offline fallback from the project -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- PRACTICAL 6 - REQUIREMENT I: Tailwind CSS Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Keep the registration form visibly Bootstrap-based while the resource section uses Tailwind. */
+        .bootstrap-registration-card {
+            background: #fff;
+            border: 1px solid #dee2e6;
+            border-radius: 0.375rem;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08);
+        }
+
+        .bootstrap-registration-card .form-label {
+            font-family: inherit;
+            font-size: 0.95rem;
+            letter-spacing: 0;
+            text-transform: none;
+            color: #212529;
+        }
+
+        .bootstrap-registration-card .form-control,
+        .bootstrap-registration-card .form-select {
+            border: 1px solid #ced4da;
+            border-radius: 0.375rem;
+            background: #fff;
+            padding: 0.75rem 1rem;
+        }
+
+        .bootstrap-registration-card .form-control:focus,
+        .bootstrap-registration-card .form-select:focus {
+            border-color: #86b7fe;
+            box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container navbar">
+            <a href="index.html" class="brand-logo">
+                <div class="brand-badge">CSA</div>
+                <div class="brand-text">
+                    Champion Sports Academy
+                    <small>Vadodara &middot; Gujarat</small>
+                </div>
+            </a>
+
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+                &#9776;
+            </button>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="programmes.html" class="nav-link">Programmes</a></li>
+                <li><a href="admissions.html" class="nav-link active">Admissions</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="admissions.html" class="btn btn-gold" style="padding: 0.6rem 1.25rem;">Enrol Now</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Page Header Banner -->
+    <section style="background: var(--csa-navy); padding: 4rem 0 3rem; color: #FFF; text-align: center;">
+        <div class="container">
+            <span class="eyebrow eyebrow-dark">Join the Academy</span>
+            <h1 style="color:#FFF">Online Admission Portal</h1>
+            <p style="color: var(--csa-border); max-width: 600px; margin: 0.5rem auto 0;">Complete the registration form below to secure your spot for the upcoming coaching session.</p>
+        </div>
+    </section>
+
+    <!-- Admissions Form Section -->
+    <section class="section-padding">
+        <div class="container">
+
+            <div class="form-card bootstrap-registration-card">
+                <form id="admissionForm" novalidate>
+
+                    <!-- Student Personal Details -->
+                    <h3 style="margin-bottom: 1.5rem; color: var(--csa-emerald); border-bottom: 2px solid var(--csa-border); padding-bottom: 0.5rem;">1. Student Information</h3>
+
+                    <div class="row g-3">
+                        <div class="col-md-6 form-group">
+                            <label for="rollNumber" class="form-label">Roll Number *</label>
+                            <input type="text" id="rollNumber" class="form-control" placeholder="e.g. CSA-2026-001" required>
+                            <span class="error-msg">Please enter a roll number.</span>
+                        </div>
+
+                        <div class="col-md-6 form-group">
+                            <label for="firstName" class="form-label">First Name *</label>
+                            <input type="text" id="firstName" class="form-control" placeholder="e.g. Aditya" required>
+                            <span class="error-msg">Please enter a first name.</span>
+                        </div>
+                    </div>
+
+                    <div class="row g-4 mb-4">
+                        <div class="form-group col-md-6">
+                            <label for="fullName" class="form-label">Student Full Name *</label>
+                            <input type="text" id="fullName" class="form-control" placeholder="e.g. Aditya Jain" required>
+                            <span class="error-msg">Please enter a valid student name (min 3 chars).</span>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="dob" class="form-label">Date of Birth *</label>
+                            <input type="date" id="dob" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="row g-4 mb-4">
+                        <div class="form-group col-md-6">
+                            <label for="email" class="form-label">Email Address *</label>
+                            <input type="email" id="email" class="form-control" placeholder="e.g. aditya@example.com" required>
+                            <span class="error-msg">Please enter a valid email address.</span>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="phone" class="form-label">Mobile Number *</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="10-digit Indian Mobile Number" maxlength="10" required>
+                            <span class="error-msg">Please enter a valid 10-digit mobile number.</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-12 mb-4" style="margin-top: 1rem;">
+                        <label for="address" class="form-label">Address *</label>
+                        <textarea id="address" class="form-control" rows="3" placeholder="Enter your complete address" required></textarea>
+                        <span class="error-msg">Please enter your address.</span>
+                    </div>
+
+                    <!-- Programme Selection -->
+                    <h3 style="margin: 2rem 0 1.5rem; color: var(--csa-emerald); border-bottom: 2px solid var(--csa-border); padding-bottom: 0.5rem;">2. Discipline &amp; Batch Selection</h3>
+
+                    <div class="row g-4 mb-4">
+                        <div class="form-group col-md-6">
+                            <label for="sportSelect" class="form-label">Select Sport Discipline *</label>
+                            <select id="sportSelect" class="form-select" required>
+                                <option value="" disabled selected>Choose Sport...</option>
+                                <option value="Cricket">Cricket Excellence Academy (₹2,500/mo)</option>
+                                <option value="Football">Football Development League (₹2,000/mo)</option>
+                                <option value="Tennis">Tennis Performance Coaching (₹3,000/mo)</option>
+                                <option value="Swimming">Olympic Swimming Academy (₹2,800/mo)</option>
+                                <option value="Athletics">Track &amp; Field Athletics (₹1,800/mo)</option>
+                            </select>
+                            <span class="error-msg">Please select a sport discipline.</span>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="batchSelect" class="form-label">Preferred Batch Timing *</label>
+                            <select id="batchSelect" class="form-select" required>
+                                <option value="" disabled selected>Choose Timing...</option>
+                                <option value="Morning Batch">Morning Batch (6:30 AM &minus; 8:30 AM)</option>
+                                <option value="Evening Batch">Evening Batch (5:00 PM &minus; 7:00 PM)</option>
+                                <option value="Weekend Batch">Weekend Only (Sat &amp; Sun 7:00 AM)</option>
+                            </select>
+                            <span class="error-msg">Please select a batch timing.</span>
+                        </div>
+                    </div>
+
+                    <!-- Parent / Guardian Information -->
+                    <h3 style="margin: 2rem 0 1.5rem; color: var(--csa-emerald); border-bottom: 2px solid var(--csa-border); padding-bottom: 0.5rem;">3. Parent / Guardian Contact</h3>
+
+                    <div class="row g-4 mb-4">
+                        <div class="form-group col-md-6">
+                            <label for="guardianName" class="form-label">Parent / Guardian Name</label>
+                            <input type="text" id="guardianName" class="form-control" placeholder="e.g. Rajesh Jain">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="city" class="form-label">City / Location</label>
+                            <input type="text" id="city" class="form-control" value="Vadodara, Gujarat">
+                        </div>
+                    </div>
+
+                    <div class="text-center" style="margin-top: 2.5rem;">
+                        <button type="submit" class="btn btn-primary" style="padding: 1rem 2.5rem; font-size: 1.2rem;">
+                            Submit Registration &rarr;
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+
+            <!-- ====================================================================
+                 Academy Resource Library
+                 ==================================================================== -->
+            <section class="mt-12 rounded-2xl border border-slate-200 bg-white p-6 shadow-xl md:p-8">
+                <div class="mb-6">
+                    <span class="inline-flex rounded bg-emerald-50 px-3 py-1 text-sm font-bold uppercase tracking-wide text-emerald-700">Academy Resources</span>
+                    <h2 class="mt-3 text-3xl font-extrabold normal-case tracking-normal text-slate-900">Add A Library Resource</h2>
+                    <p class="mt-2 max-w-2xl text-base text-slate-600">Keep your coaching resources organised by recording books, training guides, and reference material in one place.</p>
+                </div>
+
+                <div class="mb-8 rounded-lg bg-blue-500 p-4 text-white transition-colors duration-300 hover:bg-emerald-600">
+                    <h3 class="text-2xl font-bold normal-case tracking-normal text-white">Training Library</h3>
+                    <p class="mt-2">Browse and maintain the academy's collection of coaching resources.</p>
+                </div>
+
+                <form id="bookForm" class="grid gap-5 md:grid-cols-2" novalidate>
+                    <div class="md:col-span-2">
+                        <h3 class="text-2xl font-bold normal-case tracking-normal text-slate-900">Book Entry Form</h3>
+                    </div>
+
+                    <label class="block">
+                        <span class="text-sm font-semibold uppercase tracking-wide text-slate-700">Book Title</span>
+                        <input type="text" id="bookTitle" placeholder="Enter book title" class="mt-2 w-full rounded-lg border border-slate-300 bg-slate-50 px-4 py-3 text-slate-900 outline-none transition focus:border-teal-600 focus:bg-white focus:ring-4 focus:ring-teal-100" required>
+                    </label>
+
+                    <label class="block">
+                        <span class="text-sm font-semibold uppercase tracking-wide text-slate-700">Author Name</span>
+                        <input type="text" id="bookAuthor" placeholder="Enter author name" class="mt-2 w-full rounded-lg border border-slate-300 bg-slate-50 px-4 py-3 text-slate-900 outline-none transition focus:border-teal-600 focus:bg-white focus:ring-4 focus:ring-teal-100" required>
+                    </label>
+
+                    <label class="block">
+                        <span class="text-sm font-semibold uppercase tracking-wide text-slate-700">Publisher Name</span>
+                        <input type="text" id="bookPublisher" placeholder="Enter publisher name" class="mt-2 w-full rounded-lg border border-slate-300 bg-slate-50 px-4 py-3 text-slate-900 outline-none transition focus:border-teal-600 focus:bg-white focus:ring-4 focus:ring-teal-100" required>
+                    </label>
+
+                    <label class="block">
+                        <span class="text-sm font-semibold uppercase tracking-wide text-slate-700">Published Year</span>
+                        <input type="number" id="bookYear" min="1000" max="2100" placeholder="2026" class="mt-2 w-full rounded-lg border border-slate-300 bg-slate-50 px-4 py-3 text-slate-900 outline-none transition focus:border-teal-600 focus:bg-white focus:ring-4 focus:ring-teal-100" required>
+                    </label>
+
+                    <label class="block">
+                        <span class="text-sm font-semibold uppercase tracking-wide text-slate-700">ISBN</span>
+                        <input type="text" id="bookIsbn" placeholder="978-93-00000-00-0" class="mt-2 w-full rounded-lg border border-slate-300 bg-slate-50 px-4 py-3 text-slate-900 outline-none transition focus:border-teal-600 focus:bg-white focus:ring-4 focus:ring-teal-100" required>
+                    </label>
+
+                    <label class="block">
+                        <span class="text-sm font-semibold uppercase tracking-wide text-slate-700">Quantity</span>
+                        <input type="number" id="bookQuantity" min="1" placeholder="10" class="mt-2 w-full rounded-lg border border-slate-300 bg-slate-50 px-4 py-3 text-slate-900 outline-none transition focus:border-teal-600 focus:bg-white focus:ring-4 focus:ring-teal-100" required>
+                    </label>
+
+                    <div class="md:col-span-2">
+                        <button type="submit" class="rounded-lg bg-teal-700 px-6 py-3 font-bold uppercase tracking-wide text-white shadow-md transition hover:bg-clifford focus:outline-none focus:ring-4 focus:ring-red-100">Save Book Details</button>
+                    </div>
+                    <p id="bookFormStatus" class="md:col-span-2 text-sm font-semibold text-teal-700" role="status" aria-live="polite"></p>
+                </form>
+            </section>
+
+            <!-- ====================================================================
+                 PRACTICAL 4 - REQUIREMENT II: Local Storage Inspector Widget
+                 Shows what is stored in localStorage right now in a live table!
+                 ==================================================================== -->
+            <div style="max-width: 800px; margin: 3rem auto 0; background: var(--csa-surface); border-radius: var(--radius-lg); padding: 2rem; border: 1px solid var(--csa-border); box-shadow: var(--csa-shadow-md);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                    <h3 style="margin: 0; color: var(--csa-navy);">📦 What is Stored in Local Storage Right Now</h3>
+                    <button class="btn btn-gold" id="clearStorageBtn" style="padding: 0.4rem 0.9rem; font-size: 0.85rem;">Clear Local Storage</button>
+                </div>
+                <p style="color: var(--csa-text-muted); font-size: 0.9rem; margin-bottom: 1rem;">
+                    Iterates through <code>localStorage.length</code> and <code>localStorage.key(i)</code> to display the raw saved JSON data.
+                </p>
+
+                <div class="schedule-table-wrapper" style="margin-top: 0;">
+                    <table class="table" id="localStorageDumpTable">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Key Name</th>
+                                <th>Stored Value (JSON Data)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Dynamically populated by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Confirmation Modal Overlay -->
+    <div class="modal-overlay" id="successModal">
+        <div class="modal-box">
+            <div class="modal-icon">&#127881;</div>
+            <h2 style="color: var(--csa-navy); margin-bottom: 0.5rem;">Registration Saved!</h2>
+            <p style="color: var(--csa-text-muted); margin-bottom: 1.5rem;">Thank you <strong id="confirmName" style="color: var(--csa-emerald);">Student</strong>. Your admission details for <strong id="confirmSport">Selected Sport</strong> have been saved to <strong>Local Storage</strong>.</p>
+            <button class="btn btn-primary" id="closeModalBtn">Got it, Thank You!</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-bottom" style="border:none; padding:0;">
+                <p>&copy; 2026 Champion Sports Academy, Vadodara.</p>
+                <p><a href="index.html">Back to Home &rarr;</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Local Bootstrap JavaScript keeps interactive components available offline. -->
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

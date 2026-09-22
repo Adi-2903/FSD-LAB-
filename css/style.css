@@ -1,0 +1,1001 @@
+/* ===================================================================
+   Champion Sports Academy, Vadodara — Master Design System
+   Production & Deployment-Ready Stylesheet
+   Includes Lab Practical 3 & 4 Implementations with Explicit Comments
+   =================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,700&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* --- Design Tokens --- */
+:root {
+    --csa-navy: #0A192F;
+    --csa-navy-light: #112240;
+    --csa-emerald: #0F766E;
+    --csa-emerald-hover: #115E59;
+    --csa-mint: #2DD4BF;
+    --csa-mint-soft: rgba(45, 212, 191, 0.12);
+    --csa-gold: #F59E0B;
+    --csa-gold-hover: #D97706;
+    --csa-red: #DC2626;
+    --csa-red-hover: #B91C1C;
+    --csa-court-blue: #0284C7;
+
+    --csa-bg: #F8FAFC;
+    --csa-surface: #FFFFFF;
+    --csa-surface-alt: #F1F5F9;
+    --csa-text-main: #0F172A;
+    --csa-text-muted: #475569;
+    --csa-text-light: #94A3B8;
+    --csa-border: #E2E8F0;
+
+    --csa-shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.05);
+    --csa-shadow-md: 0 10px 25px -5px rgba(15, 23, 42, 0.08);
+    --csa-shadow-lg: 0 20px 35px -10px rgba(15, 23, 42, 0.14);
+    --csa-glass-bg: rgba(10, 25, 47, 0.82);
+    --csa-glass-border: rgba(255, 255, 255, 0.1);
+
+    --font-heading: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    --radius-full: 9999px;
+    --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --- Base & Reset --- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--csa-bg);
+    color: var(--csa-text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ====================================================================
+   PRACTICAL 3 - REQUIREMENT III: Responsive Text Size ("vw" unit)
+   Uses clamp(min, vw, max) for fluid responsive typography
+   ==================================================================== */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.1;
+}
+
+h1 { font-size: clamp(2.5rem, 5.5vw, 4.5rem); } /* Uses 5.5vw unit */
+h2 { font-size: clamp(1.8rem, 3.5vw, 2.75rem); } /* Uses 3.5vw unit */
+h3 { font-size: clamp(1.3rem, 2.5vw, 1.75rem); }
+
+a {
+    color: var(--csa-emerald);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+a:hover { color: var(--csa-emerald-hover); }
+
+/* ====================================================================
+   PRACTICAL 3 - REQUIREMENT II: width and max-width Properties
+   ==================================================================== */
+img, picture {
+    width: 100%;
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+
+/* --- Utility Classes --- */
+.container {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.text-center { text-align: center; }
+.text-gold { color: var(--csa-gold); }
+.text-mint { color: var(--csa-mint); }
+.text-emerald { color: var(--csa-emerald); }
+
+.eyebrow {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--csa-emerald);
+    background: var(--csa-mint-soft);
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-sm);
+    margin-bottom: 0.75rem;
+}
+
+.eyebrow-dark {
+    color: var(--csa-mint);
+    background: rgba(45, 212, 191, 0.15);
+}
+
+.section-padding {
+    padding: 5rem 0;
+}
+
+.bg-alt { background-color: var(--csa-surface-alt); }
+.bg-navy { background-color: var(--csa-navy); color: #FFF; }
+
+/* --- Buttons --- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 0.85rem 1.75rem;
+    border-radius: var(--radius-md);
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    text-decoration: none;
+    box-shadow: var(--csa-shadow-sm);
+}
+
+.btn-primary {
+    background: var(--csa-emerald);
+    color: #FFFFFF;
+}
+
+.btn-primary:hover {
+    background: var(--csa-emerald-hover);
+    color: #FFFFFF;
+    transform: translateY(-2px);
+    box-shadow: var(--csa-shadow-md);
+}
+
+.btn-gold {
+    background: var(--csa-gold);
+    color: var(--csa-navy);
+}
+
+.btn-gold:hover {
+    background: var(--csa-gold-hover);
+    color: var(--csa-navy);
+    transform: translateY(-2px);
+    box-shadow: var(--csa-shadow-md);
+}
+
+.btn-outline-light {
+    background: transparent;
+    color: #FFFFFF;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-outline-light:hover {
+    background: #FFFFFF;
+    color: var(--csa-navy);
+    border-color: #FFFFFF;
+    transform: translateY(-2px);
+}
+
+/* --- Header & Navigation --- */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--csa-glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--csa-glass-border);
+    transition: all var(--transition-normal);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 76px;
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.brand-badge {
+    width: 44px;
+    height: 44px;
+    background: var(--csa-emerald);
+    color: #FFFFFF;
+    font-family: var(--font-heading);
+    font-weight: 900;
+    font-size: 1.25rem;
+    display: grid;
+    place-items: center;
+    border-radius: var(--radius-sm);
+    box-shadow: 0 2px 8px rgba(15, 118, 110, 0.4);
+}
+
+.brand-text {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 1.35rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.brand-text small {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--csa-mint);
+    letter-spacing: 1.5px;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-link {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.85);
+    transition: color var(--transition-fast);
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--csa-mint);
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--csa-mint);
+    border-radius: 2px;
+}
+
+.mobile-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: #FFFFFF;
+    font-size: 1.75rem;
+    cursor: pointer;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    position: relative;
+    min-height: 88vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, rgba(10, 25, 47, 0.92) 0%, rgba(17, 34, 64, 0.75) 100%),
+                url('https://images.unsplash.com/photo-1521412644187-c49fa049e84d?w=1800&q=80') center/cover no-repeat;
+    color: #FFFFFF;
+    overflow: hidden;
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to top, var(--csa-bg), transparent);
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.hero-title {
+    color: #FFFFFF;
+    font-size: clamp(3rem, 6.5vw, 5.5rem);
+    margin-bottom: 1.25rem;
+}
+
+.hero-title span {
+    color: var(--csa-mint);
+    background: linear-gradient(90deg, var(--csa-mint), #A7F3D0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-lead {
+    font-size: 1.2rem;
+    color: var(--csa-border);
+    margin-bottom: 2rem;
+    max-width: 580px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.hero-card-preview {
+    background: var(--csa-glass-bg);
+    border: 1px solid var(--csa-glass-border);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    box-shadow: var(--csa-shadow-lg);
+}
+
+.hero-badge-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.hero-badge-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.hero-badge-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--csa-mint-soft);
+    color: var(--csa-mint);
+    border-radius: var(--radius-md);
+    display: grid;
+    place-items: center;
+    font-size: 1.5rem;
+}
+
+.hero-badge-info strong {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    color: #FFFFFF;
+}
+
+.hero-badge-info span {
+    font-size: 0.85rem;
+    color: var(--csa-text-light);
+}
+
+/* --- Stats Counter Band --- */
+.stats-section {
+    margin-top: -50px;
+    position: relative;
+    z-index: 10;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    background: var(--csa-surface);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem 2rem;
+    box-shadow: var(--csa-shadow-lg);
+    border: 1px solid var(--csa-border);
+}
+
+.stat-item {
+    text-align: center;
+    padding: 0 1rem;
+    border-right: 1px solid var(--csa-border);
+}
+
+.stat-item:last-child { border-right: none; }
+
+.stat-number {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--csa-emerald);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--csa-text-muted);
+}
+
+/* --- Sports Programmes Section --- */
+.programs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.program-card {
+    background: var(--csa-surface);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--csa-shadow-md);
+    border: 1px solid var(--csa-border);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.program-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--csa-shadow-lg);
+}
+
+.program-img-wrapper {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+}
+
+.program-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.program-card:hover .program-img-wrapper img {
+    transform: scale(1.08);
+}
+
+.program-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.35rem 0.85rem;
+    border-radius: var(--radius-full);
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    color: #FFFFFF;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.badge-cricket { background: var(--csa-red); }
+.badge-football { background: var(--csa-emerald); }
+.badge-tennis { background: var(--csa-court-blue); }
+.badge-swimming { background: #0284C7; }
+.badge-athletics { background: var(--csa-gold); }
+
+.program-body {
+    padding: 1.75rem;
+}
+
+.program-title {
+    margin-bottom: 0.75rem;
+    color: var(--csa-navy);
+}
+
+.program-desc {
+    color: var(--csa-text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1.25rem;
+}
+
+.program-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1rem;
+    border-top: 1px solid var(--csa-border);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--csa-text-muted);
+}
+
+/* ====================================================================
+   PRACTICAL 4 - REQUIREMENT III: Drag and Drop API
+   Coach Weekly Planner Component (Activities & Drop Zones)
+   ==================================================================== */
+.planner-widget-card {
+    background: var(--csa-surface);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    box-shadow: var(--csa-shadow-lg);
+    border: 1px solid var(--csa-border);
+    margin-top: 3rem;
+}
+
+.planner-widget-card h3 {
+    margin-bottom: 0.25rem;
+    color: var(--csa-navy);
+}
+
+.planner-board {
+    display: grid;
+    grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.2fr);
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.activity-panel, .week-panel {
+    padding: 1.25rem;
+    border: 1px solid var(--csa-border);
+    border-radius: var(--radius-md);
+    background: var(--csa-surface-alt);
+}
+
+.panel-title {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--csa-text-muted);
+    margin-bottom: 1rem;
+}
+
+.drag-item {
+    margin-bottom: 0.75rem;
+    padding: 0.85rem 1rem;
+    border-radius: var(--radius-md);
+    background: var(--csa-emerald);
+    color: #FFFFFF;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+    cursor: grab;
+    transition: transform var(--transition-fast), opacity var(--transition-fast);
+    box-shadow: var(--csa-shadow-sm);
+}
+
+.drag-item:hover {
+    background: var(--csa-emerald-hover);
+    transform: translateX(4px);
+}
+
+.drag-item:active {
+    cursor: grabbing;
+}
+
+.week-panel {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.drop-zone {
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    border: 2px dashed #94A3B8;
+    border-radius: var(--radius-md);
+    background: #FFFFFF;
+    padding: 1rem;
+    transition: border-color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.day-column strong {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    color: var(--csa-navy);
+}
+
+.empty-text {
+    margin: auto;
+    color: #94A3B8;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.drop-zone.active {
+    border-color: var(--csa-emerald);
+    background: var(--csa-mint-soft);
+}
+
+.session-chip {
+    padding: 0.75rem;
+    border-radius: var(--radius-sm);
+    background: #CCFBF1;
+    color: #0F514C;
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    box-shadow: var(--csa-shadow-sm);
+}
+
+/* --- Audio Element Demonstration --- */
+.audio-demo-card {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2.5rem;
+    background: var(--csa-surface);
+    border: 1px solid var(--csa-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--csa-shadow-lg);
+    text-align: center;
+}
+
+.audio-demo-card p {
+    color: var(--csa-text-muted);
+    margin: 0.75rem 0 1.5rem;
+}
+
+.audio-demo-card audio {
+    width: min(100%, 520px);
+    border-radius: 25px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+}
+
+/* --- Filter Tabs Component --- */
+.filter-bar {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 0.6rem 1.5rem;
+    border-radius: var(--radius-full);
+    border: 1px solid var(--csa-border);
+    background: var(--csa-surface);
+    color: var(--csa-text-muted);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background: var(--csa-emerald);
+    color: #FFFFFF;
+    border-color: var(--csa-emerald);
+    box-shadow: var(--csa-shadow-sm);
+}
+
+/* --- Facilities Section --- */
+.facilities-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.facility-card {
+    display: flex;
+    background: var(--csa-surface);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--csa-border);
+    box-shadow: var(--csa-shadow-sm);
+}
+
+.facility-img {
+    width: 45%;
+    object-fit: cover;
+}
+
+.facility-content {
+    padding: 1.75rem;
+    width: 55%;
+}
+
+/* --- Testimonials --- */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.testimonial-card {
+    background: var(--csa-navy-light);
+    border: 1px solid var(--csa-glass-border);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    color: #FFFFFF;
+    box-shadow: var(--csa-shadow-md);
+}
+
+.quote-icon {
+    font-size: 2.5rem;
+    color: var(--csa-mint);
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+
+.testimonial-text {
+    font-size: 0.95rem;
+    color: var(--csa-border);
+    font-style: italic;
+    margin-bottom: 1.5rem;
+}
+
+.author-info strong {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    color: #FFFFFF;
+}
+
+.author-info span {
+    font-size: 0.8rem;
+    color: var(--csa-mint);
+}
+
+/* --- Schedule Table (Programmes Page) --- */
+.schedule-table-wrapper {
+    background: var(--csa-surface);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--csa-shadow-md);
+    border: 1px solid var(--csa-border);
+    margin-top: 2rem;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.table th, .table td {
+    padding: 1rem 1.5rem;
+}
+
+.table thead th {
+    background: var(--csa-navy);
+    color: #FFFFFF;
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.table tbody tr {
+    border-bottom: 1px solid var(--csa-border);
+}
+
+.table tbody tr:nth-child(even) {
+    background: var(--csa-surface-alt);
+}
+
+/* --- Form Controls & Admissions Portal --- */
+.form-card {
+    background: var(--csa-surface);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    box-shadow: var(--csa-shadow-lg);
+    border: 1px solid var(--csa-border);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group.full-width {
+    grid-column: span 2;
+}
+
+.form-label {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--csa-navy);
+}
+
+.form-control, .form-select {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    padding: 0.8rem 1rem;
+    border: 1.5px solid var(--csa-border);
+    border-radius: var(--radius-md);
+    background: var(--csa-surface-alt);
+    color: var(--csa-text-main);
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-control:focus, .form-select:focus {
+    outline: none;
+    border-color: var(--csa-emerald);
+    background: #FFFFFF;
+    box-shadow: 0 0 0 4px var(--csa-mint-soft);
+}
+
+.form-control.is-invalid {
+    border-color: var(--csa-red);
+}
+
+.error-msg {
+    font-size: 0.8rem;
+    color: var(--csa-red);
+    display: none;
+}
+
+.form-control.is-invalid + .error-msg {
+    display: block;
+}
+
+/* Modal Popup */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(10, 25, 47, 0.8);
+    backdrop-filter: blur(6px);
+    z-index: 2000;
+    display: grid;
+    place-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-normal);
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-box {
+    background: var(--csa-surface);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    box-shadow: var(--csa-shadow-lg);
+}
+
+.modal-icon {
+    font-size: 3.5rem;
+    color: var(--csa-emerald);
+    margin-bottom: 1rem;
+}
+
+/* --- Footer --- */
+.site-footer {
+    background: var(--csa-navy);
+    color: var(--csa-border);
+    padding: 4rem 0 2rem;
+    border-top: 1px solid var(--csa-glass-border);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.footer-brand h3 {
+    color: #FFFFFF;
+    margin-bottom: 1rem;
+}
+
+.footer-col h4 {
+    color: #FFFFFF;
+    font-size: 1.2rem;
+    margin-bottom: 1.25rem;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.footer-links a {
+    color: var(--csa-border);
+    transition: color var(--transition-fast);
+}
+
+.footer-links a:hover {
+    color: var(--csa-mint);
+}
+
+.footer-bottom {
+    padding-top: 2rem;
+    border-top: 1px solid var(--csa-glass-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+}
+
+/* ====================================================================
+   PRACTICAL 3 - REQUIREMENT IV: Media Queries for Breakpoints
+   ==================================================================== */
+@media (max-width: 1024px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-card-preview { display: none; }
+    .programs-grid, .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+    .facilities-grid { grid-template-columns: 1fr; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+    .stat-item { border-right: none; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        top: 76px;
+        left: 0;
+        right: 0;
+        background: var(--csa-navy);
+        flex-direction: column;
+        padding: 2rem;
+        gap: 1.5rem;
+        transform: translateY(-150%);
+        transition: transform var(--transition-normal);
+        border-bottom: 1px solid var(--csa-glass-border);
+    }
+
+    .nav-menu.active { transform: translateY(0); }
+    .mobile-toggle { display: block; }
+    .programs-grid, .testimonials-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .form-group.full-width { grid-column: span 1; }
+    .facility-card { flex-direction: column; }
+    .facility-img, .facility-content { width: 100%; }
+    .planner-board, .week-panel { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+}

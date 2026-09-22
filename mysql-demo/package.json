@@ -1,0 +1,15 @@
+{
+  "name": "champion-sports-academy-mysql-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Node.js and MySQL CRUD demonstration for Champion Sports Academy",
+  "main": "demo.js",
+  "scripts": {
+    "demo": "node demo.js",
+    "check": "node --check demo.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "mysql2": "^3.14.0"
+  }
+}

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Champion Sports Academy, Vadodara — Gujarat's premier sports coaching center for Cricket, Football, Tennis, Swimming, and Athletics.">
+    <title>Champion Sports Academy — Vadodara | Professional Sports Coaching</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ====================================================================
+         SITE HEADER & NAVIGATION
+         ==================================================================== -->
+    <header class="site-header">
+        <div class="container navbar">
+            <a href="index.html" class="brand-logo" aria-label="Champion Sports Academy Home">
+                <div class="brand-badge">CSA</div>
+                <div class="brand-text">
+                    Champion Sports Academy
+                    <small>Vadodara &middot; Gujarat</small>
+                </div>
+            </a>
+
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu">
+                &#9776;
+            </button>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="programmes.html" class="nav-link">Programmes</a></li>
+                <li><a href="admissions.html" class="nav-link">Admissions</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="admissions.html" class="btn btn-gold" style="padding: 0.6rem 1.25rem;">Enrol Now</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- ====================================================================
+         HERO SECTION
+         PRACTICAL 3 - REQUIREMENT III: Responsive Text Size ("vw" unit)
+         Demonstrated in CSS via clamp(2.5rem, 5.5vw, 4.5rem)
+         ==================================================================== -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <span class="eyebrow eyebrow-dark">&#9733; Gujarat's #1 Rated Sports Academy</span>
+                    <h1 class="hero-title">Unleash Your <span>Athletic Potential.</span></h1>
+                    <p class="hero-lead">World-class coaching, professional turf grounds, and structured training
+                        programs designed to transform passionate young talent into state and national champions.</p>
+                    <div class="hero-actions">
+                        <a href="programmes.html" class="btn btn-primary">&#127942; Explore Programmes</a>
+                        <a href="admissions.html" class="btn btn-outline-light">&#128221; Apply for Admission</a>
+                    </div>
+                </div>
+
+                <div class="hero-card-preview">
+                    <div class="hero-badge-list">
+                        <div class="hero-badge-item">
+                            <div class="hero-badge-icon">&#127951;</div>
+                            <div class="hero-badge-info">
+                                <strong>Turf Cricket Nets</strong>
+                                <span>Morning &amp; Evening Batches</span>
+                            </div>
+                        </div>
+                        <div class="hero-badge-item">
+                            <div class="hero-badge-icon">&#9917;</div>
+                            <div class="hero-badge-info">
+                                <strong>FIFA-Standard Pitch</strong>
+                                <span>Weekend Competitive League</span>
+                            </div>
+                        </div>
+                        <div class="hero-badge-item">
+                            <div class="hero-badge-icon">&#127934;</div>
+                            <div class="hero-badge-info">
+                                <strong>Clay &amp; Hard Tennis Courts</strong>
+                                <span>Personal Stroke Analysis</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================================================
+         STATISTICS COUNTER BAND
+         ==================================================================== -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="15" data-suffix="+">15+</div>
+                    <div class="stat-label">Certified Elite Coaches</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="1500" data-suffix="+">1500+</div>
+                    <div class="stat-label">Athletes Trained</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="45" data-suffix="+">45+</div>
+                    <div class="stat-label">State &amp; District Titles</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="98" data-suffix="%">98%</div>
+                    <div class="stat-label">Parent Satisfaction Rate</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================================================
+         FEATURED PROGRAMMES SHOWCASE
+         PRACTICAL 3 - REQUIREMENT II: width and max-width Properties & <picture>
+         ==================================================================== -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="text-center">
+                <span class="eyebrow">Professional Training</span>
+                <h2>Our Featured Sports Programmes</h2>
+                <p style="max-width: 600px; margin: 0 auto; color: var(--csa-text-muted);">Structured age-appropriate
+                    coaching modules designed by certified coaches for beginner, intermediate, and advanced athletes.
+                </p>
+            </div>
+
+            <div class="programs-grid">
+                <!-- Cricket Card -->
+                <article class="program-card">
+                    <div class="program-img-wrapper">
+                        <!-- PRACTICAL 3 - REQUIREMENT II: Dynamic <picture> image element -->
+                        <picture>
+                            <source media="(min-width: 900px)"
+                                srcset="https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=700&q=80">
+                            <img src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=700&q=80"
+                                alt="Cricket Coaching at CSA Vadodara">
+                        </picture>
+                        <span class="program-badge badge-cricket">Cricket</span>
+                    </div>
+                    <div class="program-body">
+                        <h3 class="program-title">Cricket Excellence Academy</h3>
+                        <p class="program-desc">Turf pitch net sessions, video stroke analysis, match tactics, and
+                            bowling variation drills for Under-14 and Under-19 squads.</p>
+                        <div class="program-meta">
+                            <span>&#9201; Mon - Sat (6:30 AM / 5:00 PM)</span>
+                            <a href="programmes.html" class="text-emerald">View Details &rarr;</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Football Card -->
+                <article class="program-card">
+                    <div class="program-img-wrapper">
+                        <picture>
+                            <source media="(min-width: 900px)"
+                                srcset="https://images.unsplash.com/photo-1575361204480-aadea25e6e68?w=700&q=80">
+                            <img src="https://images.unsplash.com/photo-1575361204480-aadea25e6e68?w=700&q=80"
+                                alt="Football Training at CSA Vadodara">
+                        </picture>
+                        <span class="program-badge badge-football">Football</span>
+                    </div>
+                    <div class="program-body">
+                        <h3 class="program-title">Football Development League</h3>
+                        <p class="program-desc">FIFA-size synthetic pitch training focusing on tactical positioning,
+                            endurance, ball control, and weekend match play.</p>
+                        <div class="program-meta">
+                            <span>&#9201; Mon - Sun (Morning &amp; Evening)</span>
+                            <a href="programmes.html" class="text-emerald">View Details &rarr;</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Tennis Card -->
+                <article class="program-card">
+                    <div class="program-img-wrapper">
+                        <picture>
+                            <source media="(min-width: 900px)"
+                                srcset="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=700&q=80">
+                            <img src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=700&q=80"
+                                alt="Tennis Coaching at CSA Vadodara">
+                        </picture>
+                        <span class="program-badge badge-tennis">Tennis</span>
+                    </div>
+                    <div class="program-body">
+                        <h3 class="program-title">Tennis Performance Center</h3>
+                        <p class="program-desc">Clay and hard court coaching emphasizing serve accuracy, footwork speed,
+                            match strategy, and tournament preparation.</p>
+                        <div class="program-meta">
+                            <span>&#9201; Mon - Sat (7:00 AM / 4:00 PM)</span>
+                            <a href="programmes.html" class="text-emerald">View Details &rarr;</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- ====================================================================
+                 PRACTICAL 4 - REQUIREMENT III: Drag and Drop API
+                 Coach Weekly Planner Widget
+                 ==================================================================== -->
+            <div class="planner-widget-card">
+                <h3>Coach Weekly Planner (Drag and Drop API)</h3>
+                <p style="color: var(--csa-text-muted);">Drag a training activity into a day to prepare the academy
+                    schedule.</p>
+
+                <div class="planner-board">
+                    <!-- Activities Panel (Left) -->
+                    <div class="activity-panel">
+                        <p class="panel-title">Activities</p>
+                        <div class="drag-item" draggable="true" data-session="Cricket Nets">Cricket Nets</div>
+                        <div class="drag-item" draggable="true" data-session="Football Fitness">Football Fitness</div>
+                        <div class="drag-item" draggable="true" data-session="Tennis Serve Practice">Tennis Serve
+                            Practice</div>
+                        <div class="drag-item" draggable="true" data-session="Strength Training">Strength Training</div>
+                    </div>
+
+                    <!-- Drop Zones Panel (Right) -->
+                    <div class="week-panel">
+                        <div class="day-column drop-zone">
+                            <strong>Monday</strong>
+                            <span class="empty-text">Drop session</span>
+                        </div>
+                        <div class="day-column drop-zone">
+                            <strong>Wednesday</strong>
+                            <span class="empty-text">Drop session</span>
+                        </div>
+                        <div class="day-column drop-zone">
+                            <strong>Friday</strong>
+                            <span class="empty-text">Drop session</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ====================================================================
+                 PRACTICAL 4 - REQUIREMENT I: Geolocation API
+                 Branch Finder Component
+                 ==================================================================== -->
+            <div class="planner-widget-card" style="margin-top: 2rem;">
+                <h3>Nearest Branch Finder (Geolocation API)</h3>
+                <p style="color: var(--csa-text-muted); margin-bottom: 1rem;">Tap the button to automatically find the
+                    nearest Champion Sports Academy ground to your current location.</p>
+                <button class="btn btn-primary" id="locationBtn" type="button">📍 Locate Nearby Branch</button>
+                <p id="locationOutput" style="margin-top: 1rem; color: var(--csa-navy); font-weight: 600;">Tap button
+                    above to retrieve coordinates.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ====================================================================
+         AUDIO ELEMENT DEMONSTRATION
+         ==================================================================== -->
+    <section class="section-padding bg-alt">
+        <div class="container">
+            <div class="audio-demo-card">
+                <span class="eyebrow">HTML Media</span>
+                <h2>The Audio Element</h2>
+                <p>Click on the play button to play a sound.</p>
+
+                <audio controls>
+                    <source src="birds.wav" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================================================
+         WORLD-CLASS FACILITIES SHOWCASE
+         ==================================================================== -->
+    <section class="section-padding bg-alt">
+        <div class="container">
+            <div class="text-center">
+                <span class="eyebrow">World-Class Infrastructure</span>
+                <h2>Our Sports Facilities</h2>
+                <p style="max-width: 600px; margin: 0 auto; color: var(--csa-text-muted);">Equipped with
+                    state-of-the-art turf grounds, floodlights, safety gear, and sports physiotherapy support.</p>
+            </div>
+
+            <div class="facilities-grid">
+                <div class="facility-card">
+                    <img class="facility-img"
+                        src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=600&q=80"
+                        alt="Floodlit Cricket Pitches">
+                    <div class="facility-content">
+                        <h3>Turf &amp; Astro-Turf Pitches</h3>
+                        <p>Dedicated natural grass turf wickets and all-weather astro-turf nets with high-capacity LED
+                            floodlights for evening practice.</p>
+                    </div>
+                </div>
+
+                <div class="facility-card">
+                    <img class="facility-img"
+                        src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?w=600&q=80"
+                        alt="Indoor Fitness & Gym">
+                    <div class="facility-content">
+                        <h3>Athletic Conditioning Gym</h3>
+                        <p>Specialized strength, agility, and recovery zone supervised by certified sports
+                            physiotherapists and fitness trainers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================================================
+         TESTIMONIALS SECTION
+         ==================================================================== -->
+    <section class="section-padding bg-navy">
+        <div class="container">
+            <div class="text-center">
+                <span class="eyebrow eyebrow-dark">Success Stories</span>
+                <h2 style="color:#FFF">What Parents &amp; Athletes Say</h2>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="quote-icon">&ldquo;</div>
+                    <p class="testimonial-text">Champion Sports Academy transformed my son's cricket technique
+                        completely. Within one year of coaching, he was selected for the Vadodara District Under-16
+                        squad.</p>
+                    <div class="author-info">
+                        <strong>Rajesh Patel</strong>
+                        <span>Parent of Under-16 Cricketer</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon">&ldquo;</div>
+                    <p class="testimonial-text">The tennis facilities and individual stroke analysis here are top class.
+                        The coaches focus on mental strength as much as physical game plan.</p>
+                    <div class="author-info">
+                        <strong>Priya Shah</strong>
+                        <span>State Tennis Semi-Finalist</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon">&ldquo;</div>
+                    <p class="testimonial-text">Excellent discipline, friendly environment, and well-maintained football
+                        pitch. The weekend league matches give incredible real-match exposure.</p>
+                    <div class="author-info">
+                        <strong>Amit Desai</strong>
+                        <span>Parent of Youth Footballer</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================================================
+         CTA CALLOUT BAND
+         ==================================================================== -->
+    <section class="section-padding"
+        style="background: linear-gradient(135deg, var(--csa-emerald) 0%, var(--csa-navy) 100%); color:#FFF;">
+        <div class="container text-center">
+            <h2 style="color:#FFF; margin-bottom: 1rem;">Ready to Join Champion Sports Academy?</h2>
+            <p style="max-width: 600px; margin: 0 auto 2rem; color: var(--csa-border);">Admissions for the upcoming June
+                &amp; December training batches are now open. Reserve your student slot today!</p>
+            <a href="admissions.html" class="btn btn-gold">&#128221; Fill Online Admission Form</a>
+        </div>
+    </section>
+
+    <!-- ====================================================================
+         FOOTER
+         ==================================================================== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Champion Sports Academy</h3>
+                    <p>Near Race Course Ground, Sayajigunj, Vadodara, Gujarat &minus; 390005.</p>
+                    <p style="margin-top: 1rem; color: var(--csa-mint); font-weight: 700;">📞 Phone: +91 98765 43210
+                        &nbsp;|&nbsp; ✉️ Info@championsports.in</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="programmes.html">Sports Programmes</a></li>
+                        <li><a href="admissions.html">Admissions</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Sports</h4>
+                    <ul class="footer-links">
+                        <li><a href="programmes.html">Cricket Academy</a></li>
+                        <li><a href="programmes.html">Football League</a></li>
+                        <li><a href="programmes.html">Tennis Coaching</a></li>
+                        <li><a href="programmes.html">Swimming Pool</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Training Hours</h4>
+                    <p>Morning Batch: 6:00 AM &minus; 9:00 AM</p>
+                    <p>Evening Batch: 4:00 PM &minus; 7:30 PM</p>
+                    <p style="margin-top:0.5rem; color:var(--csa-gold);">Open Monday &minus; Sunday</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Champion Sports Academy, Vadodara. All rights reserved.</p>
+                <p>Designed for Excellence in Athletic Training</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

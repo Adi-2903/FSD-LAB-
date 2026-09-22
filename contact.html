@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- ====================================================================
+         PRACTICAL 3 - REQUIREMENT I: Viewport Meta Tag
+         ==================================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Contact Champion Sports Academy, Vadodara. Find branch address, ground location map, enquiry phone numbers and operational hours.">
+    <title>Contact Us — Champion Sports Academy, Vadodara</title>
+    <!-- CSS Path Fix -->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        [v-cloak] { display: none; }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container navbar">
+            <a href="index.html" class="brand-logo">
+                <div class="brand-badge">CSA</div>
+                <div class="brand-text">
+                    Champion Sports Academy
+                    <small>Vadodara &middot; Gujarat</small>
+                </div>
+            </a>
+
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+                &#9776;
+            </button>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="programmes.html" class="nav-link">Programmes</a></li>
+                <li><a href="admissions.html" class="nav-link">Admissions</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                <li><a href="admissions.html" class="btn btn-gold" style="padding: 0.6rem 1.25rem;">Enrol Now</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div id="vueContactApp" v-cloak>
+
+    <!-- Page Header Banner -->
+    <section style="background: var(--csa-navy); padding: 4rem 0 3rem; color: #FFF; text-align: center;">
+        <div class="container">
+            <span class="eyebrow eyebrow-dark">Get in Touch</span>
+            <h1 v-uppercase title="Click to change text case" style="color:#FFF; cursor: pointer;">Contact Us &amp; Location</h1>
+            <p style="color: var(--csa-border); max-width: 600px; margin: 0.5rem auto 0;">Visit our ground in Vadodara or reach out to our admission helpdesk.</p>
+        </div>
+    </section>
+
+    <!-- Contact & Location Grid Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="facilities-grid" style="grid-template-columns: 1fr 1fr; gap: 3rem;">
+
+                <!-- Contact Info Column -->
+                <div>
+                    <span class="eyebrow">Ground Location</span>
+                    <h2>Champion Sports Academy</h2>
+                    <p style="color: var(--csa-text-muted); margin-bottom: 2rem;">We are conveniently located opposite the Botanical Garden near Race Course Ground in Sayajigunj, Vadodara.</p>
+
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                            <div style="font-size: 1.5rem; color: var(--csa-emerald);">📍</div>
+                            <div>
+                                <strong>Academy Address</strong>
+                                <p style="margin: 0; color: var(--csa-text-muted);">Near Race Course Ground, Sayajigunj Road, Vadodara, Gujarat &minus; 390005.</p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                            <div style="font-size: 1.5rem; color: var(--csa-emerald);">📞</div>
+                            <div>
+                                <strong>Admission Helpline</strong>
+                                <p style="margin: 0; color: var(--csa-text-muted);">+91 98765 43210 &nbsp;|&nbsp; +91 98765 43211</p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                            <div style="font-size: 1.5rem; color: var(--csa-emerald);">✉️</div>
+                            <div>
+                                <strong>Email Support</strong>
+                                <p style="margin: 0; color: var(--csa-text-muted);">info@championsports.in &nbsp;|&nbsp; admissions@championsports.in</p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                            <div style="font-size: 1.5rem; color: var(--csa-emerald);">⏰</div>
+                            <div>
+                                <strong>Desk Operating Hours</strong>
+                                <p style="margin: 0; color: var(--csa-text-muted);">Monday &minus; Saturday: 6:00 AM &minus; 8:00 PM<br>Sunday: 6:00 AM &minus; 12:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Maps Widget Embed -->
+                <div class="site-card" style="padding: 0; overflow: hidden; height: 100%; min-height: 400px;">
+                    <iframe title="Champion Sports Academy Vadodara Location"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.680652618991!2d73.1812!3d22.3072!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDE4JzI1LjkiTiA3M8KwMTB0NTLookVF!5e0!3m2!1sen!2sin!4v1600000000000!5m2!1sen!2sin"
+                            width="100%" height="100%" style="border:0; min-height: 400px;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Academy Updates powered by Vue custom directives -->
+    <section class="section-padding bg-alt">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 2rem;">
+                <span class="eyebrow">Academy Updates</span>
+                <h2 v-uppercase title="Click to change text case" style="cursor: pointer;">Stay Connected With CSA</h2>
+                <p style="max-width: 620px; margin: 0 auto; color: var(--csa-text-muted);">
+                    Keep track of academy announcements and upcoming activities from the contact desk. Click the heading to switch its case.
+                </p>
+            </div>
+
+            <div class="facilities-grid" style="grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2rem;">
+                <div class="site-card">
+                    <h3>Latest Announcements</h3>
+                    <p style="color: var(--csa-text-muted);">Click the heading above to toggle its text between uppercase and lowercase.</p>
+                    <ul style="display: flex; flex-direction: column; gap: 1rem; padding: 0; margin: 1.5rem 0 0; list-style: none;">
+                        <li v-for="update in updates" :key="update.id" class="site-card" style="padding: 1rem; background: var(--csa-surface-alt);">
+                            <strong>{{ update.title }}</strong>
+                            <p style="margin: 0.35rem 0 0; color: var(--csa-text-muted);">{{ update.message }}</p>
+                            <small v-date-format="update.date" style="display: block; margin-top: 0.5rem; color: var(--csa-emerald); font-weight: 700;"></small>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="site-card">
+                    <h3>Add An Update</h3>
+                    <p style="color: var(--csa-text-muted);">Create a new academy announcement for the contact page.</p>
+                    <form @submit.prevent="addUpdate" style="margin-top: 1.5rem;">
+                        <label class="form-label" for="updateTitle">Update title</label>
+                        <input id="updateTitle" v-model.trim="newUpdate" class="form-control" placeholder="e.g. New evening batch announced" required>
+                        <button class="btn btn-primary" type="submit" style="margin-top: 1rem;">Add Update</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-bottom" style="border:none; padding:0;">
+                <p>&copy; 2026 Champion Sports Academy, Vadodara.</p>
+                <p><a href="index.html">Back to Home &rarr;</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        const { createApp } = Vue;
+
+        function formatReadableDate(value) {
+            const date = new Date(value);
+            if (Number.isNaN(date.getTime())) return 'Date unavailable';
+
+            return new Intl.DateTimeFormat('en-IN', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric'
+            }).format(date);
+        }
+
+        createApp({
+            data() {
+                return {
+                    newUpdate: '',
+                    updates: [
+                        {
+                            id: 1,
+                            title: 'Summer coaching registration is open',
+                            message: 'Contact our admissions desk to reserve a training slot.',
+                            date: '2026-04-06'
+                        },
+                        {
+                            id: 2,
+                            title: 'Weekend trials at Race Course Ground',
+                            message: 'Players can speak with our coaching team during the next open session.',
+                            date: '2026-04-12'
+                        }
+                    ]
+                };
+            },
+            methods: {
+                addUpdate() {
+                    if (!this.newUpdate) return;
+
+                    this.updates.unshift({
+                        id: Date.now(),
+                        title: this.newUpdate,
+                        message: 'New information from the Champion Sports Academy contact desk.',
+                        date: new Date().toISOString()
+                    });
+                    this.newUpdate = '';
+                }
+            }
+        })
+            .directive('uppercase', {
+                mounted(element) {
+                    element.addEventListener('click', function () {
+                        const currentText = element.textContent;
+                        element.textContent = currentText === currentText.toUpperCase()
+                            ? currentText.toLowerCase()
+                            : currentText.toUpperCase();
+                    });
+                }
+            })
+            .directive('date-format', {
+                mounted(element, binding) {
+                    element.textContent = `Published: ${formatReadableDate(binding.value)}`;
+                },
+                updated(element, binding) {
+                    element.textContent = `Published: ${formatReadableDate(binding.value)}`;
+                }
+            })
+            .mount('#vueContactApp');
+    </script>
+</body>
+
+</html>

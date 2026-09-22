@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sports Coaching Programmes & Batch Schedules at Champion Sports Academy, Vadodara. Cricket, Football, Tennis, Swimming & Athletics.">
+    <title>Sports Programmes &amp; Schedules — Champion Sports Academy</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container navbar">
+            <a href="index.html" class="brand-logo">
+                <div class="brand-badge">CSA</div>
+                <div class="brand-text">
+                    Champion Sports Academy
+                    <small>Vadodara &middot; Gujarat</small>
+                </div>
+            </a>
+
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+                &#9776;
+            </button>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="programmes.html" class="nav-link active">Programmes</a></li>
+                <li><a href="admissions.html" class="nav-link">Admissions</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="admissions.html" class="btn btn-gold" style="padding: 0.6rem 1.25rem;">Enrol Now</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Page Header Banner -->
+    <section style="background: var(--csa-navy); padding: 4rem 0 3rem; color: #FFF; text-align: center;">
+        <div class="container">
+            <span class="eyebrow eyebrow-dark">Coaching Modules</span>
+            <h1 style="color:#FFF">Sports Programmes &amp; Schedules</h1>
+            <p style="color: var(--csa-border); max-width: 600px; margin: 0.5rem auto 0;">Explore our professional training disciplines, batch timings, and fee structure.</p>
+        </div>
+    </section>
+
+    <!-- Interactive Filter & Programmes Grid -->
+    <section class="section-padding">
+        <div class="container">
+
+            <!-- Filter Tabs -->
+            <div class="filter-bar">
+                <button class="filter-btn active" data-filter="all">All Programmes</button>
+                <button class="filter-btn" data-filter="cricket">Cricket</button>
+                <button class="filter-btn" data-filter="football">Football</button>
+                <button class="filter-btn" data-filter="tennis">Tennis</button>
+                <button class="filter-btn" data-filter="swimming">Swimming</button>
+                <button class="filter-btn" data-filter="athletics">Athletics</button>
+            </div>
+
+            <!-- Program Cards Grid -->
+            <div class="programs-grid">
+                <!-- Cricket -->
+                <article class="program-card" data-category="cricket">
+                    <div class="program-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=700&q=80" alt="Cricket">
+                        <span class="program-badge badge-cricket">Cricket</span>
+                    </div>
+                    <div class="program-body">
+                        <h3 class="program-title">Cricket Excellence (Under-14 / Under-19)</h3>
+                        <p class="program-desc">Turf wicket net practice, video stroke breakdown, match tactics, bowling variations, and fitness drills.</p>
+                        <div class="program-meta">
+                            <span>Fee: ₹2,500 / month</span>
+                            <a href="admissions.html" class="btn btn-primary" style="padding: 0.4rem 1rem; font-size: 0.85rem;">Enrol &rarr;</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Football -->
+                <article class="program-card" data-category="football">
+                    <div class="program-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1575361204480-aadea25e6e68?w=700&q=80" alt="Football">
+                        <span class="program-badge badge-football">Football</span>
+                    </div>
+                    <div class="program-body">
+                        <h3 class="program-title">Youth Football League</h3>
+                        <p class="program-desc">Tactical formations, endurance conditioning, technical ball control, and weekend match play on synthetic turf.</p>
+                        <div class="program-meta">
+                            <span>Fee: ₹2,000 / month</span>
+                            <a href="admissions.html" class="btn btn-primary" style="padding: 0.4rem 1rem; font-size: 0.85rem;">Enrol &rarr;</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Tennis -->
+                <article class="program-card" data-category="tennis">
+                    <div class="program-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=700&q=80" alt="Tennis">
+                        <span class="program-badge badge-tennis">Tennis</span>
+                    </div>
+                    <div class="program-body">
+                        <h3 class="program-title">Tennis Performance Coaching</h3>
+                        <p class="program-desc">Clay and hard court sessions. Personal stroke analysis, footwork agility, serve accuracy, and tournament prep.</p>
+                        <div class="program-meta">
+                            <span>Fee: ₹3,000 / month</span>
+                            <a href="admissions.html" class="btn btn-primary" style="padding: 0.4rem 1rem; font-size: 0.85rem;">Enrol &rarr;</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Swimming -->
+                <article class="program-card" data-category="swimming">
+                    <div class="program-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1600965962361-9035dbfd1c50?w=700&q=80" alt="Swimming">
+                        <span class="program-badge badge-swimming">Swimming</span>
+                    </div>
+                    <div class="program-body">
+                        <h3 class="program-title">Olympic Swimming Academy</h3>
+                        <p class="program-desc">Temperature-controlled pool with stroke refinement for freestyle, backstroke, breaststroke, and butterfly.</p>
+                        <div class="program-meta">
+                            <span>Fee: ₹2,800 / month</span>
+                            <a href="admissions.html" class="btn btn-primary" style="padding: 0.4rem 1rem; font-size: 0.85rem;">Enrol &rarr;</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Athletics -->
+                <article class="program-card" data-category="athletics">
+                    <div class="program-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=700&q=80" alt="Athletics">
+                        <span class="program-badge badge-athletics">Athletics</span>
+                    </div>
+                    <div class="program-body">
+                        <h3 class="program-title">Track &amp; Field Athletics</h3>
+                        <p class="program-desc">Sprint mechanics, long-distance pacing, jump techniques, and athletic conditioning by certified coaches.</p>
+                        <div class="program-meta">
+                            <span>Fee: ₹1,800 / month</span>
+                            <a href="admissions.html" class="btn btn-primary" style="padding: 0.4rem 1rem; font-size: 0.85rem;">Enrol &rarr;</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Schedule & Fee Matrix Table -->
+            <div style="margin-top: 4rem;">
+                <div class="text-center">
+                    <span class="eyebrow">Weekly Timetable</span>
+                    <h2>Batch Schedule &amp; Fee Structure</h2>
+                </div>
+
+                <div class="schedule-table-wrapper">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Sport Discipline</th>
+                                <th>Batch Name</th>
+                                <th>Days</th>
+                                <th>Timings</th>
+                                <th>Monthly Fee</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Cricket</strong></td>
+                                <td>Under-14 Morning Nets</td>
+                                <td>Mon &minus; Sat</td>
+                                <td>6:30 AM &minus; 8:30 AM</td>
+                                <td><strong class="text-emerald">₹2,500</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cricket</strong></td>
+                                <td>Under-19 Evening Squad</td>
+                                <td>Mon &minus; Sat</td>
+                                <td>5:00 PM &minus; 7:00 PM</td>
+                                <td><strong class="text-emerald">₹2,500</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Football</strong></td>
+                                <td>Weekend League Batch</td>
+                                <td>Sat &amp; Sun</td>
+                                <td>7:00 AM &minus; 9:30 AM</td>
+                                <td><strong class="text-emerald">₹2,000</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tennis</strong></td>
+                                <td>Clay Court Beginners</td>
+                                <td>Mon, Wed, Fri</td>
+                                <td>7:00 AM &minus; 8:30 AM</td>
+                                <td><strong class="text-emerald">₹3,000</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Swimming</strong></td>
+                                <td>Open Fitness Batch</td>
+                                <td>Tue, Thu, Sat</td>
+                                <td>6:00 AM &minus; 7:30 AM</td>
+                                <td><strong class="text-emerald">₹2,800</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-bottom" style="border:none; padding:0;">
+                <p>&copy; 2026 Champion Sports Academy, Vadodara.</p>
+                <p><a href="index.html">Back to Home &rarr;</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
