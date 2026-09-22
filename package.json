@@ -1,0 +1,16 @@
+{
+  "name": "champion-sports-academy",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Champion Sports Academy website with a Node.js and MySQL backend",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "check": "node --check server.js && node --check db.js && node --check js/main.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mysql2": "^3.14.0"
+  }
+}

@@ -102,6 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
        all stored key-value pairs inside a live table on the web page!
        ==================================================================== */
     const admissionForm = document.getElementById('admissionForm');
+    const admissionFormStatus = document.getElementById('admissionFormStatus');
     const successModal = document.getElementById('successModal');
     const closeModalBtn = document.getElementById('closeModalBtn');
     const dumpTable = document.getElementById('localStorageDumpTable');
@@ -212,11 +213,10 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             if (isValid) {
-                // Save to Local Storage
                 const registrationData = {
                     rollNumber: rollNumber.value.trim(),
                     firstName: firstName.value.trim(),
-                    name: fullName.value.trim(),
+                    fullName: fullName.value.trim(),
                     dateOfBirth: dob.value,
                     email: email.value.trim(),
                     phone: phone.value.trim(),
@@ -228,22 +228,31 @@ document.addEventListener('DOMContentLoaded', function () {
                     registeredAt: new Date().toLocaleTimeString() + ', ' + new Date().toLocaleDateString()
                 };
 
-                localStorage.setItem('csa_registration_' + Date.now(), JSON.stringify(registrationData));
+                fetch('/api/admissions', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(registrationData)
+                })
+                    .then(async response => {
+                        const result = await response.json();
+                        if (!response.ok) throw new Error(result.error || 'Unable to save admission.');
+                        return result;
+                    })
+                    .then(() => {
+                        const confirmName = document.getElementById('confirmName');
+                        const confirmSport = document.getElementById('confirmSport');
 
-                const confirmName = document.getElementById('confirmName');
-                const confirmSport = document.getElementById('confirmSport');
-
-                if (confirmName) confirmName.innerText = registrationData.name;
-                if (confirmSport) confirmSport.innerText = registrationData.sport;
-
-                if (successModal) {
-                    successModal.classList.add('active');
-                }
-
-                // Update live storage table
-                renderLocalStorageDump();
-
-                admissionForm.reset();
+                        if (confirmName) confirmName.innerText = registrationData.name;
+                        if (confirmSport) confirmSport.innerText = registrationData.sport;
+                        if (successModal) successModal.classList.add('active');
+                        admissionForm.reset();
+                    })
+                    .catch(error => {
+                        if (admissionFormStatus) {
+                            admissionFormStatus.textContent = error.message;
+                            admissionFormStatus.className = 'text-center text-sm font-semibold text-red-600';
+                        }
+                    });
             }
         });
     }

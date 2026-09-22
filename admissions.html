@@ -203,6 +203,7 @@
                             Submit Registration &rarr;
                         </button>
                     </div>
+                    <p id="admissionFormStatus" class="text-center" role="status" aria-live="polite"></p>
 
                 </form>
             </div>
@@ -274,7 +275,7 @@
                     <button class="btn btn-gold" id="clearStorageBtn" style="padding: 0.4rem 0.9rem; font-size: 0.85rem;">Clear Local Storage</button>
                 </div>
                 <p style="color: var(--csa-text-muted); font-size: 0.9rem; margin-bottom: 1rem;">
-                    Iterates through <code>localStorage.length</code> and <code>localStorage.key(i)</code> to display the raw saved JSON data.
+                    Iterates through <code>localStorage.length</code> and <code>localStorage.key(i)</code> to display saved library book JSON data.
                 </p>
 
                 <div class="schedule-table-wrapper" style="margin-top: 0;">
@@ -301,7 +302,7 @@
         <div class="modal-box">
             <div class="modal-icon">&#127881;</div>
             <h2 style="color: var(--csa-navy); margin-bottom: 0.5rem;">Registration Saved!</h2>
-            <p style="color: var(--csa-text-muted); margin-bottom: 1.5rem;">Thank you <strong id="confirmName" style="color: var(--csa-emerald);">Student</strong>. Your admission details for <strong id="confirmSport">Selected Sport</strong> have been saved to <strong>Local Storage</strong>.</p>
+            <p style="color: var(--csa-text-muted); margin-bottom: 1.5rem;">Thank you <strong id="confirmName" style="color: var(--csa-emerald);">Student</strong>. Your admission details for <strong id="confirmSport">Selected Sport</strong> have been saved to the academy database.</p>
             <button class="btn btn-primary" id="closeModalBtn">Got it, Thank You!</button>
         </div>
     </div>
