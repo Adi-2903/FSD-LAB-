@@ -2,6 +2,8 @@
 
 This exercise demonstrates the requested Node.js/MySQL operations for the Champion Sports Academy resource library.
 
+This project is intended for **MySQL Server only**. It uses the MySQL-compatible `mysql2` Node.js driver and does not require or document MariaDB.
+
 ## Operations covered
 
 ### Requirement I
@@ -22,7 +24,7 @@ The operations below use the user-defined `runQuery(connection, sql, values)` fu
 
 ## Setup
 
-1. Install and start MySQL Server.
+1. Install and start **MySQL Server**.
 2. Copy `.env.example` to `.env` and set the MySQL credentials.
 3. Install Node dependencies:
 
